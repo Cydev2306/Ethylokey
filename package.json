@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "forever start ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -12,6 +12,7 @@
     "express": "~4.13.1",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "forever-monitor": "~0.15.1"
   }
 }
