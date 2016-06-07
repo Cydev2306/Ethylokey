@@ -437,10 +437,11 @@ html(lang='fr')
             // Start download app content
             .col-md-12
               .subscribe-content.wow.fadeInLeft
-                form.subcr-form(action='')
+                form.subcr-form(action='/',method="post" id="NewsletterForm")
                   i.fa.fa-envelope-o
-                  input(type='text', name='', id='', placeholder='Insérez votre adresse mail')
+                  input(type='text', name='usermail', id='', placeholder='votreAdresse@mail.com')
                   button.subcr-btn(type='submit') Souscrire
+                  div(class='msgbox')
     // End download app
     // Start contact
     section#contact
@@ -488,3 +489,16 @@ html(lang='fr')
     script(src='http://ethylokey.ovh/assets/js/classie.js')
     // Custom js
     script(type='text/javascript', src='http://ethylokey.ovh/assets/js/custom.js')
+    script.
+      $('document').ready(function(){
+        $('#NewsletterForm').on('submit',function(e){
+          e.preventDefault()
+          $.post( "/mailer",$( "#NewsletterForm" ).serialize(), function() {
+            $( ".msgbox" ).toggleClass(('sucess'));
+          }).fail(function() {
+            $( ".msgbox" ).toggleClass(('error'));
+          }).always(function(data){
+            $( ".msgbox" ).html(data.responseText);
+          });
+        })
+      })

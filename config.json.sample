@@ -1,0 +1,11 @@
+{
+"mailer":{
+  "service": "Gmail",
+    "auth": {
+      "Gmail":{
+        "user": "exemple@gmail.com",
+        "pass": "password"
+      }
+    }
+  }
+}
