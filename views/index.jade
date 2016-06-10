@@ -1,7 +1,7 @@
 doctype html
-html(lang='fr')
+html(lang="fr")
   head
-    meta(charset='utf-8')
+    meta(charset="utf-8")
     meta(http-equiv='Cache-Control', content='no-store')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
@@ -94,7 +94,7 @@ html(lang='fr')
                     // Start logo area
                     .logo-area
                       // Image based logo
-                      a.logo(href='index.html')
+                      a.logo(href='#')
                         img(src='assets/images/logo.png', alt='logo')
                       // Text based logo
                       // <a class="logo" href="index.html">App Landy.</a>
@@ -381,19 +381,24 @@ html(lang='fr')
               img.img-responsive.img-circle(src='http://ethylokey.ovh/assets/images/cyril.jpg', alt='charlier cyril img')
               p.testi-name Cyril Charlier
               p.testi-company
-                | Développeur Web&nbsp;
-                a(href='https://fr.linkedin.com/in/charliercyril\
-                ')
+                | Développeur Web&nbsp;&nbsp;
+                a(href='https://fr.linkedin.com/in/charliercyril')
                   i.fa.fa-linkedin-square
-              p.testi-text Innover sur de problématiques concrètes est un vrai challenge
+                |&nbsp;&nbsp;
+                a(href='https://github.com/Cydev2306')
+                  i.fa.fa-github
+              p.testi-text Innover sur des problématiques concrètes est un vrai challenge
             // single slide
             .col-md-6(align='center')
               img.img-circle(src='http://ethylokey.ovh/assets/images/david.jpg', alt='david Gabrielli img', height='153', width='153')
               p.testi-name David Gabrielli
               p.testi-company
-                | Développeur Web&nbsp;
+                | Développeur Web&nbsp;&nbsp;
                 a(href='https://fr.linkedin.com/in/david-gabrielli-97b43899')
                   i.fa.fa-linkedin-square
+                |&nbsp;&nbsp;
+                a(href='https://github.com/dgabrielli76')
+                  i.fa.fa-github
               p.testi-text Ethylokey est une solution parfaite contre l'alcoolémie au volant
     // End testimonial
     // start pricing table
@@ -439,7 +444,7 @@ html(lang='fr')
               .subscribe-content.wow.fadeInLeft
                 form.subcr-form(action='/',method="post" id="NewsletterForm")
                   i.fa.fa-envelope-o
-                  input(type='text', name='usermail', id='', placeholder='votreAdresse@mail.com')
+                  input(type='text', name='usermail', id='',required="required" , placeholder='votreAdresse@mail.com')
                   button.subcr-btn(type='submit') Souscrire
                   div(class='msgbox')
     // End download app
@@ -456,15 +461,16 @@ html(lang='fr')
               p Besoins de renseignements ? Nous prendrons le temps de vous répondre
           .col-md-12
             .contact-area
-              form.contact-form(action='')
+              form.contact-form(action='/',method="post" id="ContactForm")
                 .form-group
-                  input.form-control(type='text', placeholder='Votre nom')
+                  input.form-control(type='text', name="username", required="required", placeholder='Votre nom')
                 .form-group
-                  input.form-control(type='email', placeholder='Votre adresse mail')
+                  input.form-control(type='email',name="usermail" ,required="required", placeholder='Votre adresse mail')
                 .form-group
-                  textarea.form-control(rows='3', placeholder='Votre message')
+                  textarea.form-control(rows='3',name="message" ,required="required", placeholder='Votre message')
                 .send-area
                   button.send-btn(type='submit') Envoyer
+              div(class='msgboxcontact')
     // End contact
     // Start footer
     footer#footer
@@ -493,12 +499,19 @@ html(lang='fr')
       $('document').ready(function(){
         $('#NewsletterForm').on('submit',function(e){
           e.preventDefault()
-          $.post( "/mailer",$( "#NewsletterForm" ).serialize(), function() {
-            $( ".msgbox" ).toggleClass(('sucess'));
-          }).fail(function() {
-            $( ".msgbox" ).toggleClass(('error'));
-          }).always(function(data){
-            $( ".msgbox" ).html(data.responseText);
+          $.post( "/mailer",$( "#NewsletterForm" ).serialize(), function(data) {
+            $( ".msgbox" ).toggleClass(('sucess')).html(data);
+          }).fail(function(data) {
+            $( ".msgbox" ).toggleClass(('error')).html(data.responseText);
           });
+        })
+
+        $('#ContactForm').on('submit',function(e){
+          e.preventDefault()
+          $.post( "/contact",$( "#ContactForm" ).serialize(), function(data) {
+            $( ".msgboxcontact" ).toggleClass(('sucess')).html(data);
+          }).fail(function(data) {
+            $( ".msgboxcontact" ).toggleClass(('error')).html(data.responseText);
+          })
         })
       })
