@@ -2,8 +2,11 @@ var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer')
 var mailConfig = require('../config.json').mailer;
+var dbConfig = require('../config.json').dataBase;
 var jade = require('jade');
 var validator = require('validator');
+var MongoClient = require('mongodb').MongoClient;
+
 router.post('/',handleSendMail);
 function handleSendMail(req,res){
   // Si le mail est bon => send else -> petit notif
@@ -20,7 +23,21 @@ function handleSendMail(req,res){
     subject: 'Newsletter', // Subject line
     html: jade.renderFile('views/email/subscribe.jade') // You can choose to send an HTML body instead
 };
-if(validator.isEmail(mailOptions.from)){
+if(validator.isEmail(mailOptions.to)){
+  var d = new Date();
+  var n = d.toDateString();
+  console.log(n);
+  var urlConnect = dbConfig.service+"://"+ dbConfig.auth[dbConfig.service].username+":"+dbConfig.auth[dbConfig.service].password;
+  urlConnect+="@"+dbConfig.auth[dbConfig.service].address+"/"+dbConfig.auth[dbConfig.service].dataBase;
+
+  MongoClient.connect(urlConnect, function(error, db) {
+      if (error) throw error;
+      var objNew = { date_subscribe: n , mail: mailOptions.to };
+      db.collection("subscribe").insert(objNew, null, function (error, results) {
+        if (error) throw error;
+        console.log("Le document a bien été inséré");
+      });
+  });
   transporter.sendMail(mailOptions, function(error, info){
     if(error){
       console.log(error);
