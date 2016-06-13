@@ -108,12 +108,13 @@ img{
 /*--------------------*/
 
 #header{
+  height:700px;
 	float: left;
 	display: inline;
 	width: 100%;
-  background: #000 url('/static/assets/images/header-bg2.jpg');
+  background: #000 url('/static/assets/images/header-bg2.jpg') no-repeat;
   background-size: cover;
-  background-color: center center;
+  background-position: center center;
 }
 
 
