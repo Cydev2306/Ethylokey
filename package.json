@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": " pm2 start ./bin/www --name='webServer'"
+    "start": " pm2 start app.js --name='webServer'"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
