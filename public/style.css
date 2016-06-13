@@ -111,6 +111,9 @@ img{
 	float: left;
 	display: inline;
 	width: 100%;
+  background: #000 url('/static/assets/images/header-bg2.jpg');
+  background-size: cover;
+  background-color: center center;
 }
 
 
