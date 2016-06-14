@@ -17,13 +17,13 @@ function handleContact(req,res){
    });
   var metaData = {
     container: {
-      name: req.body.username,
+      name: striptags(req.body.username),
       mail: req.body.usermail,
       message: striptags(req.body.message)
     }};
    var jadeOutput = jade.renderFile('views/email/contact.jade',metaData);
    var mailOptions = {
-    from: req.body.usermail, // sender address
+    from: striptags(req.body.usermail), // sender address
     to: 'EthyloTeam<ethylokey@gmail.com>', // list of receivers
     subject: 'Contact depuis le site web', // Subject line
     html: jadeOutput // You can choose to send an HTML body instead
