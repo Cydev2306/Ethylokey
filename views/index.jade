@@ -56,10 +56,6 @@ html(lang="fr")
               i.fa.fa-server
               span Les fonctionnalités
           li
-            a(href='#howit-works')
-              i.fa.fa-hourglass
-              span Comment ça marche
-          li
             a(href='#pricing-table')
               i.fa.fa-usd
               span Nos tarifs
@@ -68,13 +64,17 @@ html(lang="fr")
               i.fa.fa-image
               span Screenshots
           li
-            a(href='#download-app')
-              i.fa.fa-download
-              span L'application
-          li
             a(href='#testimonial')
               i.fa.fa-black-tie
               span A propos de nous
+          li
+            a(href='#help')
+              i.fa.fa-hand-o-right
+              span Ils nous ont aidés
+          li
+            a(href='#our-tech')
+              i.fa.fa-code
+              span Nos technologies
           li
             a(href='#contact')
               i.fa.fa-envelope-o
@@ -287,7 +287,7 @@ html(lang="fr")
                 | App&nbsp;
                 span Screenshots
               p
-                | Ces différentes captures d'écrans sont ici pour vous prouver sa simple utilisation en quelques clics. L'application est actuellement en Beta
+                | Ces différentes captures d' écrans sont ici pour vous prouver sa simple utilisation en quelques clics. L' application est actuellement en Beta
           .col-md-12
             .screenshots-area
               ul.screenshots-slide
@@ -333,38 +333,6 @@ html(lang="fr")
                     .view-btn-area
                       span.fa.fa-search.view-btn
     // End screenshot
-    // Start download app
-    section#download-app
-      .download-overlay
-        .container
-          .row
-            .col-md-12
-              .title-area.wow.fadeInUp
-                h2.title
-                  | Télécharger l'&nbsp;
-                  span App
-                p
-                  | Téléchargez dès maintenant votre trousse à outils post-soirées !
-                  | Ceux qui l'ont déjà essayés sont déjà convaicus, alors pourquoi pas vous ?
-                p.testi-text Ethylokey est une solution parfaite contre l'alcoolémie au volant
-            // Start download app content
-            .col-md-12
-              .download-app-content
-                // Start single download
-                a.single-download.wow.fadeInLeft(data-wow-duration='0.75s', data-wow-delay='0.75s', href='#')
-                  .download-icon
-                    i.fa.fa-play
-                  .download-content
-                    p Coming Soon on the
-                    span Play Store
-                // Start single download
-                a.single-download.wow.fadeInLeft(data-wow-duration='1s', data-wow-delay='1s', href='#')
-                  .download-icon
-                    i.fa.fa-apple
-                  .download-content
-                    p Coming Soon on the
-                    span Apple Store
-    // End download app
     // Start testimonial
     section#testimonial
       .container
@@ -401,8 +369,40 @@ html(lang="fr")
                   i.fa.fa-github
               p.testi-text Ethylokey est une solution parfaite contre l'alcoolémie au volant
     // End testimonial
+    // Start download app
+    section#download-app
+      .download-overlay
+        .container
+          .row
+            .col-md-12
+              .title-area.wow.fadeInUp
+                h2.title
+                  | Télécharger l'&nbsp;
+                  span App
+                p
+                  | Téléchargez dès maintenant votre trousse à outils post-soirées !
+                  | Ceux qui l'ont déjà essayés sont déjà convaicus, alors pourquoi pas vous ?
+                p.testi-text Ethylokey, l'après-soirée en toute sérénité
+            // Start download app content
+            .col-md-12
+              .download-app-content
+                // Start single download
+                a.single-download.wow.fadeInLeft(data-wow-duration='0.75s', data-wow-delay='0.75s', href='#')
+                  .download-icon
+                    i.fa.fa-play
+                  .download-content
+                    p Coming Soon on the
+                    span Play Store
+                // Start single download
+                a.single-download.wow.fadeInLeft(data-wow-duration='1s', data-wow-delay='1s', href='#')
+                  .download-icon
+                    i.fa.fa-apple
+                  .download-content
+                    p Coming Soon on the
+                    span Apple Store
+    // End download app
     // start pricing table
-    section#pricing-table
+    section#help
       .container
         .row
           .col-md-12
@@ -448,6 +448,46 @@ html(lang="fr")
                   button.subcr-btn(type='submit') Souscrire
                   div(class='msgbox')
     // End download app
+    // Start techno uses
+    section#our-tech
+      .container
+        .row
+          .col-md-12
+            .title-area.wow.fadeInLeft
+              h2.title
+                | Nos &nbsp;
+                span Technologies
+              p
+                | Ethylokey a été réalisé a l'aide de nombreuses technologies
+          .col-md-12
+            .col-md-4(align='center')
+              img.img-circle(src='/static/assets/images/ionic.png', alt='Ionic', height='120', width='120')
+              p.testi-name Ionic
+              p.testi-company Applications mobiles hybrides ( Cordova, Angular)
+            .col-md-4(align='center')
+              img.img-circle(src='/static/assets/images/arduino-card.png', alt='Arduino', height='120', width='120')
+              p.testi-name Arduino
+              p.testi-company Carte et Programmation de l'Ethylokey
+            .col-md-4(align='center')
+              img.img-circle(src='/static/assets/images/nodejs.png', alt='Node js', height='120', width='120')
+              p.testi-name Node js
+              p.testi-company Parce que le JS c'est aussi coté serveur
+
+          &nbsp;
+          .col-md-12
+            .col-md-4(align='center')
+              img.img-circle(src='/static/assets/images/firebase.png', alt='FireBase', height='120', width='120')
+              p.testi-name FireBase
+              p.testi-company Base de donnée NOSQL
+            .col-md-4(align='center')
+              img.img-circle(src='/static/assets/images/mailgun.png', alt='Mailgun', height='120', width='120')
+              p.testi-name Mailgun
+              p.testi-company Service d'envoi & de réception d'Emails
+            .col-md-4(align='center')
+              img.img-circle(src='/static/assets/images/keymetrics.png', alt='Keymetrics', height='120', width='120')
+              p.testi-name Keymetrics
+              p.testi-company Outil de monitoring node Js
+    //End technos
     // Start contact
     section#contact
       .container
