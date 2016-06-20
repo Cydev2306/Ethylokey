@@ -1651,3 +1651,133 @@ img{
 
 
 }
+
+
+/*--------------------*/
+/* OUR TECH */
+/*--------------------*/
+
+
+#our-tech {
+	display: inline;
+	float: left;
+	width: 100%;
+	padding: 70px 0;
+}
+
+
+.our-tech-content {
+	display: inline;
+	float: left;
+	margin-top: 20px;
+	width: 100%;
+}
+
+
+.single-tech {
+	display: inline;
+	float: left;
+	width: 100%;
+	background-color: #f0f0f0 ;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+
+.single-tech:hover{
+  	box-shadow: 0 2px 20px #ccc;
+}
+
+
+.single-tech-head {
+	background-color: #424242;
+	display: inline;
+	float: left;
+	padding: 10px 5px;
+	text-align: center;
+	width: 100%;
+}
+
+
+.single-tech-head h5 {
+	color: #fff;
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 0;
+	padding: 5px;
+	text-transform: uppercase;
+}
+
+
+.single-tech-head p {
+	color: #fff;
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 30px;
+}
+
+
+.single-tech-head p > span {
+	font-weight: normal;
+	font-size: 15px;
+}
+
+
+.single-tech-content {
+	display: inline;
+	float: left;
+	width: 100%;
+	padding: 0 15px;
+}
+
+
+.single-tech-content ul{
+	text-align: center;
+}
+
+
+.single-tech-content ul li {
+	border-bottom: 1px solid #fff;
+	padding: 15px 10px;
+}
+
+
+.single-tech-content ul li.delete{
+	text-decoration: line-through;
+}
+
+
+.single-tech-content ul li:last-child{
+	border: none;
+}
+
+
+.single-tech-bottom {
+	display: inline;
+	float: left;
+	padding: 15px 15px 30px;
+	text-align: center;
+	width: 100%;
+}
+
+
+.single-tech-bottom .signup-btn {
+	border-radius: 3px;
+	border: 1px none transparent;
+	color: #fff;
+	display: inline-block;
+	font-size: 18px;
+	opacity: 0.8;
+	padding: 15px 50px;
+	text-decoration: none;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+
+.single-tech-bottom .signup-btn:hover{
+	border-color: 1px solid #fff;
+	opacity: 1;
+}
