@@ -1658,7 +1658,7 @@ img{
 /*--------------------*/
 
 
-#our-tech {
+#our-tech, #help {
 	display: inline;
 	float: left;
 	width: 100%;
