@@ -1,4 +1,15 @@
 {
+"dataBase":{
+    "service":"mySql",
+    "auth":{
+      "mySql":{
+        "username":"exemple",
+        "password":"exemple",
+        "address":"exemple",
+        "dataBase":"ex"
+      }
+    }
+},
 "mailer":{
   "service": "Gmail",
     "auth": {
